@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.overdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 27 16:22:05 2026 GMT
+  hsts: null
+- host: developer.overdrive.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 16 17:32:46 2026 GMT
+  hsts: false
+- host: api.overdrive.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Aug 16 17:32:46 2026 GMT
+  hsts: null
+domains:
+- domain: overdrive.com
+  dnssec: false
+  caa:
+  - 0 issue "amazontrust.com; validationmethods=http-01"
+  - 0 issue "awstrust.com; validationmethods=http-01"
+  - 0 issue "amazonaws.com; validationmethods=http-01"
+  - 0 issue "letsencrypt.org; validationmethods=dns-01,http-01"
+  - 0 issue "globalsign.com; validationmethods=dns-01"
+  - 0 issue "cloudflare.com; validationmethods=http-01"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

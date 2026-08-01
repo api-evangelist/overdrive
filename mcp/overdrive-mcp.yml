@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: https://developer.overdrive.com/api-docs/
+note: >-
+  No official OverDrive MCP server was found. Tools below are candidates
+  derived from the documented Discovery, Circulation, and Reporting API
+  operations; not published by OverDrive.
+server:
+  name: overdrive
+  transport: http
+tools:
+- name: get_library_account
+  description: Get information about a library or school account (Library Account API).
+  source_operation: GET https://api.overdrive.com/v1/libraries/{libraryId}
+- name: search_titles
+  description: Search or list a subset of titles in a digital collection (Search API).
+  source_operation: GET https://api.overdrive.com/v1/collections/{collectionToken}/products
+- name: get_title_metadata
+  description: Get details about a specific title — author, series, subjects, summary (Metadata API).
+  source_operation: GET https://api.overdrive.com/v1/collections/{collectionToken}/products/{productId}/metadata
+- name: get_title_availability
+  description: Check whether a title is available and retrieve copies/holds info (Library Availability API).
+  source_operation: GET https://api.overdrive.com/v1/collections/{collectionToken}/products/{productId}/availability
+- name: list_patron_checkouts
+  description: List a patron's current checkouts (Circulation API).
+  source_operation: GET https://patron.api.overdrive.com/v1/patrons/me/checkouts
+- name: create_checkout
+  description: Check out a title for a patron (Circulation API).
+  source_operation: POST https://patron.api.overdrive.com/v1/patrons/me/checkouts
+- name: list_patron_holds
+  description: List a patron's holds (Circulation API).
+  source_operation: GET https://patron.api.overdrive.com/v1/patrons/me/holds
+- name: place_hold
+  description: Place a hold on a title for a patron (Circulation API).
+  source_operation: POST https://patron.api.overdrive.com/v1/patrons/me/holds
+- name: get_checkouts_report
+  description: Report on titles borrowed from a collection over a time period (Reporting API).
+  source_operation: GET https://api.overdrive.com/v1/collections/{collectionToken}/reports
+- name: get_title_link
+  description: Search the catalog and get a shareable link for a title (Title Link API).
+  source_operation: Title Link API

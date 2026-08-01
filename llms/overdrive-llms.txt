@@ -1,0 +1,29 @@
+# OverDrive
+
+> OverDrive is a digital reading platform distributing ebooks, audiobooks, and magazines to public libraries and schools worldwide (Libby and Sora apps). It publishes REST APIs for working against a library's OverDrive collection: Discovery (Library Account, Search, Metadata, Availability), Circulation (patron checkouts and holds), Reporting, and Title Link. Auth is OAuth 2.0 client-credentials for discovery and patron authentication (incl. QR-code) for borrowing.
+
+## APIs
+- [Discovery API](https://developer.overdrive.com/api-docs/discovery-apis): Search and find title info — base https://api.overdrive.com/v1
+- [Circulation API](https://developer.overdrive.com/api-docs/circulation-apis): Patron checkouts and holds — base https://patron.api.overdrive.com/v1
+- [Reporting API](https://developer.overdrive.com/api-docs/reporting-apis): Borrowed-titles report (public libraries)
+
+## Authentication
+- [Authentication overview](https://developer.overdrive.com/api-docs/authentication): client, patron, and QR-code auth
+- Client token endpoint: https://oauth.overdrive.com/token (grant_type=client_credentials, Basic auth, 3600s TTL)
+- Patron token endpoint: https://oauth-patron.overdrive.com/patrontoken
+
+## Docs
+- [Developer portal](https://developer.overdrive.com/)
+- [API overview / getting started](https://developer.overdrive.com/getting-started/api-overview)
+- [Request access](https://developer.overdrive.com/request-access)
+- [Status page](https://status.overdrive.com/)
+- [Support](https://developer.overdrive.com/support/contact-us)
+
+## Artifacts
+- [Authentication profile](authentication/overdrive-authentication.yml)
+- [API conventions](conventions/overdrive-conventions.yml)
+- [Conformance](conformance/overdrive-conformance.yml)
+- [Lifecycle](lifecycle/overdrive-lifecycle.yml)
+- [Well-known index](well-known/overdrive-well-known.yml)
+- [security.txt](well-known/overdrive-security.txt)
+- [MCP candidate manifest](mcp/overdrive-mcp.yml)

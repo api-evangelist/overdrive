@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.overdrive.com/
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://developer.overdrive.com/getting-started/api-overview
+environments:
+  production: https://api.overdrive.com/v1
+  integration: https://integration.api.overdrive.com
+  detail: >-
+    OverDrive provides a dedicated integration environment with real digital
+    titles for testing before a production launch.
+status_page: https://status.overdrive.com/
+support: https://developer.overdrive.com/support/contact-us
+access:
+  request_url: https://developer.overdrive.com/request-access
+  detail: API credentials must be requested through the developer portal.
+deprecation:
+  policy_url: null
+  detail: No public deprecation/Sunset-header policy located.
+deprecated_operations: []

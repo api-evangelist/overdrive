@@ -1,8 +1,31 @@
 aid: overdrive
 name: OverDrive
-description: OverDrive is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  OverDrive is a digital reading platform that distributes ebooks, audiobooks,
+  and magazines to public libraries and schools worldwide, best known for its
+  Libby and Sora reading apps. OverDrive publishes a set of REST APIs that let
+  library systems, integrators, and partners work against a library's OverDrive
+  collection: Discovery APIs (Library Account, Search, Metadata, and Library
+  Availability), Circulation APIs (patron information, checkouts, and holds),
+  Reporting APIs (checkouts report), and a Title Link API. Access is authorized
+  with OAuth 2.0 client-credentials (client authentication) for discovery and
+  patron authentication (including QR-code sign-in) for borrowing and holds,
+  with a dedicated integration environment for testing against real titles
+  before going live.
 url: https://raw.githubusercontent.com/api-evangelist/overdrive/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://developer.overdrive.com/img/overdrive-logo.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,15 +34,93 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Books
+- Libraries
+- Ebooks
+- Audiobooks
+- Digital Media
+- Publishing
+- Education
+- Reading
+- Circulation
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: OverDrive Discovery API
+  description: >-
+    Discovery APIs to search and find information about titles in a library's
+    OverDrive collection — Library Account, Search, Metadata, and Library
+    Availability.
+  humanURL: https://developer.overdrive.com/api-docs/discovery-apis
+  baseURL: https://api.overdrive.com/v1
+  properties:
+  - type: Documentation
+    url: https://developer.overdrive.com/api-docs/discovery-apis
+- name: OverDrive Circulation API
+  description: >-
+    Circulation APIs to authenticate patrons and manage checkouts and holds
+    against a library's OverDrive collection.
+  humanURL: https://developer.overdrive.com/api-docs/circulation-apis
+  baseURL: https://patron.api.overdrive.com/v1
+  properties:
+  - type: Documentation
+    url: https://developer.overdrive.com/api-docs/circulation-apis
+- name: OverDrive Reporting API
+  description: >-
+    Reporting API to see the titles that were borrowed from a specific
+    collection during a specific time period (public libraries only).
+  humanURL: https://developer.overdrive.com/api-docs/reporting-apis
+  baseURL: https://api.overdrive.com/v1
+  properties:
+  - type: Documentation
+    url: https://developer.overdrive.com/api-docs/reporting-apis
 common:
 - type: Website
   url: http://www.overdrive.com/
+- type: DeveloperPortal
+  url: https://developer.overdrive.com/
+- type: Documentation
+  url: https://developer.overdrive.com/api-docs/authentication
+- type: APIReference
+  url: https://developer.overdrive.com/api-docs/discovery-apis
+- type: GettingStarted
+  url: https://developer.overdrive.com/getting-started/api-overview
+- type: Authentication
+  url: authentication/overdrive-authentication.yml
+- type: Support
+  url: https://developer.overdrive.com/support/contact-us
+- type: SignUp
+  url: https://developer.overdrive.com/request-access
+- type: StatusPage
+  url: https://status.overdrive.com/
+- type: Lifecycle
+  url: lifecycle/overdrive-lifecycle.yml
+- type: Conventions
+  url: conventions/overdrive-conventions.yml
+- type: Conformance
+  url: conformance/overdrive-conformance.yml
+- type: WellKnown
+  url: well-known/overdrive-well-known.yml
+- type: SecurityTxt
+  url: well-known/overdrive-security.txt
+- type: DomainSecurity
+  url: security/overdrive-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/overdrive-vulnerability-disclosure.yml
+- type: Security
+  url: https://developer.overdrive.com/.well-known/security.txt
+- type: MCPServer
+  url: mcp/overdrive-mcp.yml
+- type: LLMsTxt
+  url: llms/overdrive-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1

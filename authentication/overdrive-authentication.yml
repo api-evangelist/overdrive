@@ -1,0 +1,53 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.overdrive.com/api-docs/authentication
+docs: https://developer.overdrive.com/api-docs/authentication
+summary:
+  types: [oauth2]
+  oauth2_flows: [clientCredentials]
+  notes: >-
+    OverDrive documents three authentication modes: client authentication
+    (OAuth 2.0 client-credentials, discovery-only), patron authentication
+    (adds a patron token for borrowing and holds), and QR-code authentication
+    (an alternative to credential-based patron sign-in). Access tokens are
+    valid for 3600 seconds and return the scopes granted to the credential.
+schemes:
+- name: ClientAuthentication
+  type: oauth2
+  flow: clientCredentials
+  token_url: https://oauth.overdrive.com/token
+  grant_type: client_credentials
+  client_auth: basic
+  client_auth_detail: >-
+    Base64-encode "clientKey:clientSecret" (both case-sensitive) and send as
+    Authorization: Basic {encoded}. POST with
+    Content-Type: application/x-www-form-urlencoded;charset=UTF-8 and
+    body grant_type=client_credentials.
+  token_ttl_seconds: 3600
+  used_for: [Discovery APIs, Reporting APIs, Title Link API]
+  source: https://developer.overdrive.com/apis/client-auth
+- name: PatronAuthentication
+  type: oauth2
+  flow: clientCredentials
+  token_url: https://oauth-patron.overdrive.com/patrontoken
+  grant_type: client_credentials
+  used_for: [Circulation APIs]
+  notes: >-
+    Exchanges library credentials for a patron collection token; OverDrive
+    recommends using the resulting patron collection token for all subsequent
+    calls once a user is authenticated.
+  source: https://developer.overdrive.com/api-docs/authentication
+- name: QRCodeAuthentication
+  type: oauth2
+  used_for: [Circulation APIs]
+  notes: An alternative to credential-based patron authentication.
+  source: https://developer.overdrive.com/api-docs/authentication
+environments:
+  production:
+    discovery: https://api.overdrive.com/v1
+    circulation: https://patron.api.overdrive.com/v1
+    oauth: https://oauth.overdrive.com/token
+    patron_oauth: https://oauth-patron.overdrive.com/patrontoken
+  integration:
+    discovery: https://integration.api.overdrive.com
+    circulation: https://integration-patron.api.overdrive.com

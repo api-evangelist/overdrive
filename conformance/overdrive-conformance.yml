@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: derived
+source: https://developer.overdrive.com/api-docs/authentication
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    OAuth 2.0 client-credentials grant at oauth.overdrive.com/token; Basic
+    client authentication; bearer access tokens with 3600s TTL and scopes.
+- id: oauth2-client-credentials
+  conforms: true
+  evidence: grant_type=client_credentials documented for client authentication
+- id: rest-json
+  conforms: true
+  evidence: JSON REST APIs served under a /v1 URI-path version
+- id: oidc
+  conforms: false
+  evidence: no /.well-known/openid-configuration; OAuth authorization only
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no application/problem+json error format documented
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: /.well-known/security.txt published (Contact + Expires + Canonical)

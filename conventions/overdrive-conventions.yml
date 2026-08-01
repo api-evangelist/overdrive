@@ -1,0 +1,45 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.overdrive.com/getting-started/api-overview
+authentication:
+  style: OAuth 2.0 Bearer token
+  detail: >-
+    Client-credentials access token (Authorization: Bearer {token}) for
+    Discovery/Reporting; a patron collection token for Circulation calls.
+  see: authentication/overdrive-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: APIs are served under a /v1 path segment (e.g. api.overdrive.com/v1).
+  see: lifecycle/overdrive-lifecycle.yml
+hypermedia:
+  style: HAL-style link objects
+  detail: >-
+    Responses embed navigational links (e.g. a library account's `links`
+    object exposes the `products` link that is the foundation of the Search
+    API). Clients are expected to follow returned links (products,
+    collectionToken) rather than hand-building URLs.
+pagination:
+  style: offset-limit
+  params: [limit, offset]
+  detail: >-
+    The Search API (collections/{collectionToken}/products) supports limit and
+    offset paging over a collection's titles.
+idempotency:
+  supported: unknown
+  detail: >-
+    OverDrive does not publicly document an idempotency-key contract for
+    checkout/hold creation; not asserted here.
+error_envelope:
+  detail: >-
+    OAuth failures return standard OAuth 2.0 error responses; API errors return
+    HTTP status codes with a JSON error body. Circulation calls without a valid
+    token return 401.
+rate_limits:
+  detail: >-
+    OverDrive applies per-credential rate limiting; specific published limits
+    were not located in the developer documentation.
+cross_links:
+  authentication: authentication/overdrive-authentication.yml
+  lifecycle: lifecycle/overdrive-lifecycle.yml
+  conformance: conformance/overdrive-conformance.yml
