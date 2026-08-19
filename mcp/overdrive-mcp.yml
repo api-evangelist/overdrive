@@ -2,10 +2,8 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: https://developer.overdrive.com/api-docs/
-note: >-
-  No official OverDrive MCP server was found. Tools below are candidates
-  derived from the documented Discovery, Circulation, and Reporting API
-  operations; not published by OverDrive.
+note: No official OverDrive MCP server was found. Tools below are candidates derived from the documented
+  Discovery, Circulation, and Reporting API operations; not published by OverDrive.
 server:
   name: overdrive
   transport: http
@@ -20,7 +18,8 @@ tools:
   description: Get details about a specific title — author, series, subjects, summary (Metadata API).
   source_operation: GET https://api.overdrive.com/v1/collections/{collectionToken}/products/{productId}/metadata
 - name: get_title_availability
-  description: Check whether a title is available and retrieve copies/holds info (Library Availability API).
+  description: Check whether a title is available and retrieve copies/holds info (Library Availability
+    API).
   source_operation: GET https://api.overdrive.com/v1/collections/{collectionToken}/products/{productId}/availability
 - name: list_patron_checkouts
   description: List a patron's current checkouts (Circulation API).
@@ -40,3 +39,9 @@ tools:
 - name: get_title_link
   description: Search the catalog and get a shareable link for a title (Title Link API).
   source_operation: Title Link API
+deployment:
+  mode: none
+  verified: derived
+  tools: 10
+  checked: '2026-08-12'
+  source: catalog MCP census
