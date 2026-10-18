@@ -2,6 +2,7 @@ generated: '2026-10-14'
 method: searched
 checked:
 - clever/integrations/clever-integration-edges.yml
+- google-workspace/integrations/google-workspace-integration-edges.yml
 source:
 - clever/integrations/clever-integration-edges.yml
 edges:
@@ -23,3 +24,20 @@ edges:
   category: reading
   features:
   - instant_login
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/sora_by_overdrive_education/794111293111
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Sora by OverDrive Education
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
