@@ -29,3 +29,56 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: overdrive-book-industry-study-group-bisg
+  label: Book Industry Study Group (BISG)
+  partner_name: Book Industry Study Group (BISG)
+  category: book industry standards body membership
+  type: register
+  channel: standard-directory
+  evidence: https://www.bisg.org/member-directory/overdrive-inc
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: BISG member directory (bisg.org/member-directory/)
+    standard: BISG book-supply-chain standards (ONIX for Books US guidance, BISAC subject codes)
+    spec_file: null
+    role: bisg-member
+    registered_name: OverDrive, Inc.
+    register_country: null
+    register_id: https://www.bisg.org/member-directory/overdrive-inc
+    matched_domain: overdrive.com
+    matched_by: domain
+    signal_note: 'participation only: an organisation listing in the BISG member directory; names only (identity
+      bridged); listing is not ONIX conformance'
+    detected_by: sweep-book-publishing-onix.py
+    detected: '2026-10-20'
+    member_type: Commercial Business
+    identity: wikidata Q13515709 'OverDrive, Inc.' P856 http://www.overdrive.com
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  status: not-a-workflow
+  arazzo: null
+- slug: overdrive-edrlab-european-digital-reading-lab
+  label: EDRLab (European Digital Reading Lab)
+  partner_name: EDRLab (European Digital Reading Lab)
+  category: digital reading (EPUB / Readium / LCP) lab membership
+  type: register
+  channel: standard-directory
+  evidence: https://members.edrlab.org/members/overdrive_inc/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: EDRLab members directory (members.edrlab.org)
+    standard: Readium / EPUB 3 / Readium LCP
+    spec_file: null
+    role: edrlab-member
+    registered_name: OverDrive Inc
+    register_country: null
+    register_id: https://company.overdrive.com/
+    matched_domain: overdrive.com
+    matched_by: domain
+    signal_note: 'participation only: membership of the non-profit lab behind Readium, Thorium and Readium LCP;
+      the member page links the member''s website (the identity)'
+    detected_by: sweep-book-publishing-onix.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null

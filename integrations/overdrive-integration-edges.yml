@@ -3,6 +3,11 @@ method: searched
 checked:
 - clever/integrations/clever-integration-edges.yml
 - google-workspace/integrations/google-workspace-integration-edges.yml
+- https://members.edrlab.org/
+- https://www.bisg.org/member-directory/
+- https://www.editeur.org/8/EDItEUR-Members/
+- https://www.edrlab.org/readium-lcp/certified-apps-servers/
+- https://www.isbn-international.org/agencies
 source:
 - clever/integrations/clever-integration-edges.yml
 edges:
@@ -41,3 +46,56 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Google Workspace app
+- partner_name: Book Industry Study Group (BISG)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.bisg.org/member-directory/overdrive-inc
+  category: book industry standards body membership
+  contract_reference:
+    register: BISG member directory (bisg.org/member-directory/)
+    standard: BISG book-supply-chain standards (ONIX for Books US guidance, BISAC subject codes)
+    spec_file: null
+    role: bisg-member
+    registered_name: OverDrive, Inc.
+    register_country: null
+    register_id: https://www.bisg.org/member-directory/overdrive-inc
+    matched_domain: overdrive.com
+    matched_by: domain
+    signal_note: 'participation only: an organisation listing in the BISG member directory; names only (identity
+      bridged); listing is not ONIX conformance'
+    detected_by: sweep-book-publishing-onix.py
+    detected: '2026-10-20'
+    member_type: Commercial Business
+    identity: wikidata Q13515709 'OverDrive, Inc.' P856 http://www.overdrive.com
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  detected_by: sweep-book-publishing-onix.py
+  first_seen: '2026-10-20'
+- partner_name: EDRLab (European Digital Reading Lab)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://members.edrlab.org/members/overdrive_inc/
+  category: digital reading (EPUB / Readium / LCP) lab membership
+  contract_reference:
+    register: EDRLab members directory (members.edrlab.org)
+    standard: Readium / EPUB 3 / Readium LCP
+    spec_file: null
+    role: edrlab-member
+    registered_name: OverDrive Inc
+    register_country: null
+    register_id: https://company.overdrive.com/
+    matched_domain: overdrive.com
+    matched_by: domain
+    signal_note: 'participation only: membership of the non-profit lab behind Readium, Thorium and Readium LCP;
+      the member page links the member''s website (the identity)'
+    detected_by: sweep-book-publishing-onix.py
+    detected: '2026-10-20'
+  detected_by: sweep-book-publishing-onix.py
+  first_seen: '2026-10-20'
